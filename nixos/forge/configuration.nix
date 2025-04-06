@@ -20,7 +20,7 @@
     isNormalUser = true;
     description = "System admin";
     extraGroups = [ "networkmanager" "wheel" "input" ];
-    shell = pkgs.nushell;
+    shell = pkgs.zsh;
   };
 
   # === Nix Settings ===
@@ -45,6 +45,7 @@
   environment.systemPackages = with pkgs; [
     git
     wget
+    vim
     hyprland
     hyprpolkitagent
     xdg-desktop-portal-hyprland
@@ -58,6 +59,8 @@
 
   # === Programs and Services ===
   programs.hyprland.enable = true;
+
+  programs.zsh.enable = true;
 
   security.polkit.enable = true;
 

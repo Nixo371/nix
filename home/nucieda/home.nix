@@ -27,6 +27,8 @@
     # Shell
     nushell
     nushellPlugins.highlight
+    zsh
+    oh-my-zsh
 
     # Command Line Tools
     ripgrep
@@ -44,7 +46,7 @@
     walker
   ];
 
-  # Hyprland configuration
+  # Hyprland Configuration
   wayland.windowManager.hyprland = {
     enable = true;
     plugins = [
@@ -54,7 +56,10 @@
 
   # === Dotfile Management ===
   home.file = {
+    ".oh-my-zsh/aliases.zsh" = {
+      source = ./dotfiles/oh-my-zsh/aliases.zsh;
     };
+  };
 
   # === Program Configurations ===
   programs.git = {
@@ -63,5 +68,13 @@
 
   programs.home-manager ={
     enable = true;
+  };
+
+  programs.zsh = {
+    enable = true;
+    oh-my-zsh = {
+      enable = true;
+      theme = "robbyrussell";
+    };
   };
 }

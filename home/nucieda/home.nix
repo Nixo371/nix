@@ -56,8 +56,9 @@
 
   # === Dotfile Management ===
   home.file = {
-    ".oh-my-zsh/aliases.zsh" = {
-      source = ./dotfiles/oh-my-zsh/aliases.zsh;
+    ".oh-my-zsh" = {
+      source = ./dotfiles/oh-my-zsh;
+      recursive = true;
     };
   };
 
